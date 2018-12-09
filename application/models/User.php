@@ -15,14 +15,14 @@ class User extends CI_Model {
         $password = $_POST['password'];
 
         $data = array(
-            'username' => $username,
-            'email' => $email,
-            'password' => $password
+            'Username' => $username,
+            'Email' => $email,
+            'Password' => $password
         );
 
         //$sql = $this->db->set($data)->get_compiled_insert('users');
         //echo $sql;
-        $this->db->insert('users', $data);
+        $this->db->insert('Users', $data);
         return $username;
         /* $r=$this->db->query("INSERT INTO users(username,email,password) VALUES('$username','$email','$password')");
           return $r; */
@@ -31,10 +31,16 @@ class User extends CI_Model {
     function check_into_db() {
         $email = $_POST['email'];
         $password = $_POST['password'];
-        $r = $this->db->query("SELECT email FROM users WHERE password='$password'");
-        echo $r;
+        /*$data = array(
+            'Email' => $email,
+            'Password' => $password
+        );*/
+        $query = $this->db->query("select Username from Users where Email='$email' and Password='$password'");
+
+        foreach ($query->result() as $row){
+            echo $row->Username;
+        }
     }
 
 }
 
-?>

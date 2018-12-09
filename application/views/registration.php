@@ -29,10 +29,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         		</div>
         	</div>
     		<div class="container">
-    			<form action="/action_page.php">
+    			<form action="/Social_Media/index.php/home/register_submit" method="POST">
                       <div class="form-group">
                         <label for="name">Name :</label>
-                        <input type="text" class="form-control" name="name">
+                        <input type="text" class="form-control" name="username">
                       </div>
 					  <div class="form-group">
 					    <label for="email">Email address:</label>
@@ -51,7 +51,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				</form>
     		</div>
     		<div>
-    			<p style="text-align: right;">Already Registered..?<a href="signup.php">LogIn</a>Here</p>
+    			<p style="text-align: right;">Already Registered..?<a href="/Social_Media/index.php/home/login">LogIn</a>Here</p>
     		</div>
         </div>
     </body>
