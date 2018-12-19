@@ -5,8 +5,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Home extends CI_Controller {
     
     public function registration(){
+        
         $this->load->view("registration");
     }
+    
     public function register_submit(){
         $this->load->model('user');
         $r=$this->user->insert_into_db();
