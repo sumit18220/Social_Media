@@ -27,7 +27,7 @@ some changes made by Bhuvan
 	CREATE TABLE status(
 		StatusId int NOT NULL AUTO_INCREMENT,
 		Id int ,
-		Date date ,
+		Date datetime ,
 		Status varchar(255),
 		PRIMARY KEY(StatusId),
 		FOREIGN KEY (Id) REFERENCES users(Id)
