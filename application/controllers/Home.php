@@ -23,10 +23,25 @@ class Home extends CI_Controller {
     public function login_submit(){
         $this->load->model('user');
         $r=$this->user->check_into_db();
-        echo $r;
+
+        $data['name']=$r;
+
+        $this->load->view("homepage",$data);
+        //echo $r;
+    }
+
+    public function status_submit(){
+
+        $this->load->model('user');
+        $this->user->insert_status_into_db();
+
+        echo "Status Submitted Successfully";
     }
     
-    
+    public function homepage(){
+
+        $this->load->view("homepage");
+    }
     
 }
 
