@@ -20,22 +20,18 @@ class User extends CI_Model {
             'Password' => $password
         );
 
-        //$sql = $this->db->set($data)->get_compiled_insert('users');
-        //echo $sql;
-        $this->db->insert('Users', $data);
+        /*$sql = $this->db->set($data)->get_compiled_insert('users');
+        echo $sql;
+        $r=$this->db->query("INSERT INTO users(username,email,password) VALUES('$username','$email','$password')");
+        return $r; */
+        $this->db->insert('users', $data);
         return $username;
-        /* $r=$this->db->query("INSERT INTO users(username,email,password) VALUES('$username','$email','$password')");
-          return $r; */
     }
 
     function check_into_db() {
         $email = $_POST['email'];
         $password = $_POST['password'];
-        /*$data = array(
-            'Email' => $email,
-            'Password' => $password
-        );*/
-        $query = $this->db->query("select Username from Users where Email='$email' and Password='$password'");
+        $query = $this->db->query("select Username from users where Email='$email' and Password='$password'");
 
         foreach ($query->result() as $row){
             echo $row->Username;
