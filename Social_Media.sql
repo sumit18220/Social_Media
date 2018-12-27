@@ -32,3 +32,26 @@ some changes made by Bhuvan
 		PRIMARY KEY(StatusId),
 		FOREIGN KEY (Id) REFERENCES users(Id)
 		);
+*Reconstruction of Social_Media database table by Bhuvan
+	
+	(1)creating table users:-
+
+		CREATE TABLE users(
+	    -> id INT NOT NULL AUTO_INCREMENT,
+	    -> name VARCHAR(255),
+	    -> email VARCHAR(255),
+	    -> password VARCHAR(255),
+	    -> college VARCHAR(255),
+	    -> phone_number VARCHAR(255),
+	    -> PRIMARY KEY(id)
+	    -> );
+    (2)creating table statuses:-
+    	CREATE TABLE statuses(
+		    -> id INT NOT NULL AUTO_INCREMENT,
+		    -> user_id INT ,
+		    -> date DATETIME,
+		    -> status VARCHAR(255),
+		    -> PRIMARY KEY(id),
+		    -> FOREIGN KEY(user_id) REFERENCES users(id)
+		    -> );
+

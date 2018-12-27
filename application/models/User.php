@@ -15,27 +15,61 @@ class User extends CI_Model {
         $password = $_POST['password'];
 
         $data = array(
-            'Username' => $username,
-            'Email' => $email,
-            'Password' => $password
+            'name' => $username,
+            'email' => $email,
+            'password' => $password
         );
 
-        /*$sql = $this->db->set($data)->get_compiled_insert('users');
-        echo $sql;
-        $r=$this->db->query("INSERT INTO users(username,email,password) VALUES('$username','$email','$password')");
-        return $r; */
+        //$sql = $this->db->set($data)->get_compiled_insert('users');
+        //echo $sql;
         $this->db->insert('users', $data);
         return $username;
+        /* $r=$this->db->query("INSERT INTO users(username,email,password) VALUES('$username','$email','$password')");
+          return $r; */
+          
+    }
+
+    function insert_status(){
+        $status=$_POST['status'];
+        $time=0;//mdate('%Y-%m-%d %H:%i:%s', now());
+        $id=$_COOKIE['user_id'];
+
+        $data=array(
+            'user_id' => $id,
+            'date'=>$time,
+            'status'=>$status
+             );
+
+        $this->db->insert('statuses',$data);
     }
 
     function check_into_db() {
         $email = $_POST['email'];
         $password = $_POST['password'];
-        $query = $this->db->query("select Username from users where Email='$email' and Password='$password'");
+        /*$data = array(
+            'Email' => $email,
+            'Password' => $password
+        );*/
+        $query = $this->db->query("select * from users where email='$email' and password='$password'");
 
-        foreach ($query->result() as $row){
-            echo $row->Username;
+        //echo $query;
+
+        foreach ($query->result_array() as $row){
+            //return $row->Username;
+            
+            $data=array('name'=>$row['name'] ,
+                        'id'=>$row['id']
+                         ); 
+                        // echo $row['Username'];
+                         //echo $row['Id'];
+
+            setcookie('user_id',$data['id']);
+            setcookie('user_name',$data['name']);
+
+            return $data;
         }
+
+
     }
 
 }
