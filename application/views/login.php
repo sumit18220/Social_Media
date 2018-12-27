@@ -6,7 +6,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <html lang="en">
     <head>
         <title>Login</title>
-        <link rel="stylesheet" href="/Social_Media/static/css/bootstrap.css" type="text/css"/>
+        <link rel="stylesheet" href="/social_media/static/css/bootstrap.css" type="text/css"/>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta charset="utf-8">
     </head>
@@ -15,7 +15,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         	<div class="container">
         		<div class="row">
         			<div class="col-sm-offset-2">
-        				<img src="/Social_Media/static/img/ungineering_logo.svg">
+        				<img src="/social_media/static/img/ungineering_logo.svg">
         			</div>
         			<div class="col-sm-10">
     					<h1 class="display-3">Ungineering Social Account</h1>
@@ -30,7 +30,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         		</div>
         	</div>
     		<div class="container">
-    			<form action="/Social_Media/index.php/home/login_submit" method="POST">
+    			<form action="/social_media/index.php/home/login_submit" method="POST">
 					  <div class="form-group">
 					    <label for="email">Email address:</label>
 					    <input type="email" class="form-control" name="email">
@@ -48,7 +48,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				</form>
     		</div>
     		<div>
-    			<p style="text-align: right;">New User..?<a href="/Social_Media/index.php/home/registration">Resgiter</a>Here</p>
+    			<p style="text-align: right;">New User..?<a href="/social_media/index.php/home/registration">Resgiter</a>Here</p>
     		</div>
         </div>
     </body>

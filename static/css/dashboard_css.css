@@ -10,11 +10,15 @@ h3{
     text-align: center;
 }
 .img{
-                width:130px;
-                margin:auto;
-                border-radius:50%;
-                position:relative;
-                display: block;
-            }
+        width:130px;
+        margin:auto;
+        border-radius:50%;
+        position:relative;
+        display: block;
+    }
+#log{
+        margin-top: 40px;
+    }
+
 
                 

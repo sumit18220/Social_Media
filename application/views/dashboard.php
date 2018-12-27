@@ -1,11 +1,23 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
+<?php
+		if(isset($_COOKIE['user_id']) || isset($_COOKIE['user_name']))
+		{
+			$user_name=$_COOKIE['user_name'];
+			$user_id=$_COOKIE['user_id'];
+		}
+		else
+		{
+			$user_name=NULL;
+			$user_id=NULL;
+		}
+?>
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="/Social_Media/static/css/bootstrap.css" type="text/css"/>
-        <link rel="stylesheet" href="/Social_Media/static/css/dashboard_css.css" type="text/css">
+        <link rel="stylesheet" href="/social_media/static/css/bootstrap.css" type="text/css"/>
+        <link rel="stylesheet" href="/social_media/static/css/dashboard_css.css" type="text/css">
         <title>Dashboard</title>
     </head>
     
@@ -14,13 +26,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <div class="container">
                 <div class="row">
                     <div class="col-lg-1">
-                        <img class="logo" src="/Social_Media/static/img/ungineering_logo.svg">
+                        <img class="logo" src="/social_media/static/img/ungineering_logo.svg">
                     </div>
                     <div class="col-lg-10">
                         <h1 class="display-3">Update Your Account Here</h1>
                     </div>
                     <div class="col-lg-1">
-                        <a href=" "><button class="btn btn-success ">Home</button></a> 
+                        <a href=" /social_media/index.php/home/homepage"><button class="btn btn-success ">Home</button></a> 
                     </div>
                 </div>
             </div>
@@ -29,9 +41,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <div class="row">
                 <div class="col-md-3 col-sm-2 col-xs-12"></div>
                 <div class="col-md-6 col-sm-8 col-xs-12">
-                    <form id="log" action="/home/login_submit" method="POST">
+                    <form id="log" action="/social_media/index.php/home/dashboard_submit" method="POST">
                         <h1>Update User's Information</h1>
-                        <img class="img img-thumbnail" src="/Social_Media/static/img/img_avatar.png"/>
+                        <img class="img img-thumbnail" src="/social_media/static/img/img_avatar.png"/>
                         <div>
                             <label>College Name:</label>
                             <input class="form-control" type="text" name="college" placeholder="college name" required=""/><br/>

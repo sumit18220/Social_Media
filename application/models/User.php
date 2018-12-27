@@ -19,15 +19,28 @@ class User extends CI_Model {
             'email' => $email,
             'password' => $password
         );
-
-        //$sql = $this->db->set($data)->get_compiled_insert('users');
-        //echo $sql;
         $this->db->insert('users', $data);
-        return $username;
-        /* $r=$this->db->query("INSERT INTO users(username,email,password) VALUES('$username','$email','$password')");
-          return $r; */
-          
+        $query = $this->db->query("select id from users where email='$email' and password='$password'"); 
+        setcookie('user_id','$query');
+        setcookie('user_name',$username);
+            /*$sql = $this->db->set($data)->get_compiled_insert('users');
+            echo $sql;
+            $r=$this->db->query("INSERT INTO users(username,email,password) VALUES('$username','$email','$password')");
+            return $r; */
     }
+    
+        function check_into_db() {
+        $email = $_POST['email'];
+        $password = $_POST['password'];
+        $query = $this->db->query("select * from users where email='$email' and password='$password'");
+        foreach ($query->result_array() as $row){
+            $data=array('name'=>$row['name'] ,
+                        'id'=>$row['id']
+                       ); 
+            setcookie('user_id',$data['id']);
+            setcookie('user_name',$data['name']);
+            }
+        }
 
     function insert_status(){
         $status=$_POST['status'];
@@ -43,34 +56,13 @@ class User extends CI_Model {
         $this->db->insert('statuses',$data);
     }
 
-    function check_into_db() {
-        $email = $_POST['email'];
-        $password = $_POST['password'];
-        /*$data = array(
-            'Email' => $email,
-            'Password' => $password
-        );*/
-        $query = $this->db->query("select * from users where email='$email' and password='$password'");
 
-        //echo $query;
-
-        foreach ($query->result_array() as $row){
-            //return $row->Username;
-            
-            $data=array('name'=>$row['name'] ,
-                        'id'=>$row['id']
-                         ); 
-                        // echo $row['Username'];
-                         //echo $row['Id'];
-
-            setcookie('user_id',$data['id']);
-            setcookie('user_name',$data['name']);
-
-            return $data;
-        }
-
-
+    
+    function update_info(){
+        $college = $_POST['college'];
+        $mobile_no = $_POST['mobile_no'];
+        $id = $_COOKIE['user_id'];
+        $query=$this->db->query("UPDATE users SET Phone_Number = '$mobile_no', College= '$college' WHERE Id = $id;");
     }
-
 }
 
