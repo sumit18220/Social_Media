@@ -20,27 +20,46 @@ class User extends CI_Model {
             'password' => $password
         );
         $this->db->insert('users', $data);
-        $query = $this->db->query("select id from users where email='$email' and password='$password'"); 
-        setcookie('user_id','$query');
-        setcookie('user_name',$username);
+        $query = $this->db->query("select * from users where email='$email' and password='$password'"); 
+        //setcookie('user_id','$query');
+        //setcookie('user_name',$username);
             /*$sql = $this->db->set($data)->get_compiled_insert('users');
             echo $sql;
             $r=$this->db->query("INSERT INTO users(username,email,password) VALUES('$username','$email','$password')");
             return $r; */
+            foreach ($query->result_array()as $row) {
+                $data=array('name' => $row['name'],
+                            'id'=>$row['id']
+                 );
+                # code...
+            }
+            return $data;
     }
     
-        function check_into_db() {
+    function check_into_db() {
         $email = $_POST['email'];
         $password = $_POST['password'];
+
+        if($email==NULL || $password==NULL)
+            return 0;
+
         $query = $this->db->query("select * from users where email='$email' and password='$password'");
-        foreach ($query->result_array() as $row){
+
+        if($query->result_array()==NULL)
+            return 0;
+
+        else
+        {
+            foreach ($query->result_array() as $row){
             $data=array('name'=>$row['name'] ,
                         'id'=>$row['id']
                        ); 
-            setcookie('user_id',$data['id']);
-            setcookie('user_name',$data['name']);
             }
+            return $data;
         }
+        //setcookie('user_id',$data['id']);
+        //setcookie('user_name',$data['name']);
+    }
 
     function insert_status(){
         $status=$_POST['status'];
@@ -51,7 +70,7 @@ class User extends CI_Model {
             'user_id' => $id,
             'date'=>$time,
             'status'=>$status
-             );
+        );
 
         $this->db->insert('statuses',$data);
     }
@@ -63,6 +82,15 @@ class User extends CI_Model {
         $mobile_no = $_POST['mobile_no'];
         $id = $_COOKIE['user_id'];
         $query=$this->db->query("UPDATE users SET Phone_Number = '$mobile_no', College= '$college' WHERE Id = $id;");
+    }
+    function fetch_status(){
+
+        $query=$this->db->query("SELECT status FROM statuses");
+
+        $row= $query->result_array();
+        
+
+        return $row;
     }
 }
 

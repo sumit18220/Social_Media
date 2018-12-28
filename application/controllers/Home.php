@@ -7,6 +7,13 @@ class Home extends CI_Controller {
     public function homepage(){
         $this->load->view("homepage");
     }
+
+    public function status_submit(){
+        $this->load->model('user');
+        $this->user->insert_status();
+
+        echo "Status Submitted Successfully";
+    }
     
     public function registration(){
         setcookie("user_name", "", time() - 0);
@@ -15,26 +22,41 @@ class Home extends CI_Controller {
     }
     public function register_submit(){
         $this->load->model('user');
-        $this->user->insert_into_db();
-        $this->load->view("homepage");
+        $arr=$this->user->insert_into_db();
+
+        setcookie('user_name',$arr['name']);
+        setcookie('user_id',$arr['id']);
+
+        $this->load->helper('url');
+        redirect('/home/hompage');
+        //$this->load->view("homepage");
+        //redirect('/social_media/index.php/home/homepage');
     }
     
     public function login(){
-        setcookie("user_name", "", time() - 0);
-        setcookie("user_id","",time() - 0);
+        //setcookie("user_name", "", time() - 0);
+        //setcookie("user_id","",time() - 0);
         $this->load->view("login");
     }
     public function login_submit(){
         $this->load->model('user');
-        $this->user->check_into_db();
-        $this->load->view("homepage");
-    }
+        $arr=$this->user->check_into_db();
 
-    public function status_submit(){
-        $this->load->model('user');
-        $this->user->insert_status();
+        if($arr==NULL)
+        {
+            echo "Incorrect credentials";
+            echo "<a href='/social_media/index.php/home/login'>Login</a>";
+            return;
+        }
 
-        echo "Status Submitted Successfully";
+        setcookie('user_name',$arr['name']);
+        setcookie('user_id',$arr['id']);
+
+        //$statuses=$this->user->fetch_status();
+
+        
+        $this->load->helper('url');
+        redirect('/home/homepage');
     }
     
     public function dashboard(){
@@ -51,7 +73,10 @@ class Home extends CI_Controller {
 
         setcookie("user_name", "", time() - 0);
         setcookie("user_id","",time() - 0);
-        $this->load->view("homepage");
+        //$this->load->view("homepage");
+
+        $this->load->helper('url');
+        redirect('/home/login');
         
     }
 
