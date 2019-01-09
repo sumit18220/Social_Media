@@ -5,7 +5,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Home extends CI_Controller {
     
     public function homepage(){
-        $this->load->view("homepage");
+        $this->load->model('user');
+        $arr=$this->user->fetch_status();
+                
+        //print_r($arr);
+        $this->load->view("homepage",array('statuses' => $arr ));
     }
 
     public function status_submit(){
@@ -13,6 +17,7 @@ class Home extends CI_Controller {
         $this->user->insert_status();
 
         echo "Status Submitted Successfully";
+        echo '<a href="/social_media/index.php/home/homepage">Home</a>';
     }
     
     public function registration(){
@@ -76,7 +81,7 @@ class Home extends CI_Controller {
         //$this->load->view("homepage");
 
         $this->load->helper('url');
-        redirect('/home/login');
+        redirect('/home/homepage');
         
     }
 

@@ -47,7 +47,6 @@ class User extends CI_Model {
 
         if($query->result_array()==NULL)
             return 0;
-
         else
         {
             foreach ($query->result_array() as $row){
@@ -85,7 +84,7 @@ class User extends CI_Model {
     }
     function fetch_status(){
 
-        $query=$this->db->query("SELECT status FROM statuses");
+        $query=$this->db->query("SELECT * FROM statuses");
 
         $row= $query->result_array();
         

@@ -2,16 +2,17 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
 <?php
-		if(isset($_COOKIE['user_id']) || isset($_COOKIE['user_name']))
-		{
-			$user_name=$_COOKIE['user_name'];
-			$user_id=$_COOKIE['user_id'];
-		}
-		else
-		{
-			$user_name=NULL;
-			$user_id=NULL;
-		}
+	if(isset($_COOKIE['user_id']) || isset($_COOKIE['user_name']))
+	{
+		$user_name=$_COOKIE['user_name'];
+		$user_id=$_COOKIE['user_id'];
+	}
+	else
+	{
+		$user_name=NULL;
+		$user_id=NULL;
+	}
+	//print_r($statuses);	
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -82,9 +83,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			}
 		?>
 			<div class="row">
-				<?php while($status!=NULL) 
-						echo $status;
-						?>
+				<?php foreach ($statuses as $status) {
+					# code...
+					echo $status['status']."  "." ".$status['date'];
+
+				?>
+					<br>
+
+				<?php
+				}
+				?>
 			</div>
 		</div>
 
