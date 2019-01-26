@@ -85,5 +85,13 @@ class Home extends CI_Controller {
         
     }
 
-    
+    public function test(){
+        $this->load->view("register");
+    }
+    public function test2(){
+        $this->load->view("registerboot");
+    }
+    public function test3(){
+        $this->load->view("registrationpage");
+    }
 }
