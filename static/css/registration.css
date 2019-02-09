@@ -1,184 +1,162 @@
-	.container{
-		box-sizing: border-box;
-		width: 100%;
-		height: 653px;
-		/*border: 2px solid black;*/
-	}
-	.row1{
-		box-sizing: border-box;
-		width: 100%;
-		height: 30%;
-		/*border: 2px solid red;*/
-	}
-	.row2{
-		box-sizing: border-box;
-		width: 100%;
-		height: 70%;
-		/*border: 2px solid red;*/
-	}
-	.col1{
-		box-sizing: border-box;
-		width: 30%;
-		height: 100%;
-		float: left;
-		/*border: 2px solid blue;*/
-	}
-	.col2{
-		box-sizing: border-box;
-		width: 70%;
-		height: 100%;
-		float: left;
-		background-color: #ebebe0; 
-		/*border: 2px solid blue;*/
-	}
-	.col1_row{
-		box-sizing: border-box;
-		width: 100%;
-		height: 20%;
-		/*border: 2px solid black;*/
-	}
-	.col1_row_logo{
-		box-sizing: border-box;
-		width: 100%;
-		height: 60%;
-		/*border: 2px solid black;*/
-	}
-	.col1_row_logo_col1{
-		box-sizing: border-box;
-		width: 20%;
-		height: 100%;
-		/*border: 2px solid red;*/
-		float: left;
-	}
-	.col1_row_logo_col2{
-		box-sizing: border-box;
-		width: 20%;
-		height: 100%;
-		/*border: 2px solid red;*/
-		float: left;	
-	}
-	.col1_row_logo_col3{
-		box-sizing: border-box;
-		width: 60%;
-		height: 100%;
-		/*border: 2px solid red;*/
-		float: left;
-	}
-	.logo_row1{
-		box-sizing: border-box;
-		width: 100%;
-		height: 40%;
-		/*border: 2px solid red;*/
-	}
-	.logo_row2{
-		box-sizing: border-box;
-		width: 100%;
-		height: 20%;
-		/*border: 2px solid red;*/
-	}
-	#slogan{
-		margin: 0px;
-		font-style: italic;
-		font-size: smaller;
-		text-align: center;
-		margin-right: 50px;
-	}
-	.hr{
-		margin: 0px;
-	}
-	.row2_col1{
-		box-sizing: border-box;
-		width: 30%;
-		height: 100%;
-		float: left;
-		/*border: 2px solid blue;*/
-	}
-	
-	.row2_col1_row1{
-		box-sizing: border-box;
-		width: 100%;
-		height: 50%;
-		/*border: 2px solid red;*/
-	}
-	.row2_col1_row1_col1{
-		box-sizing: border-box;
-		width:20%;
-		height: 100%;
-		float: left;
-		/*border: 2px solid black;*/
-	}
-	.row2_col1_row1_col2{
-		box-sizing: border-box;
-		width: 80%;
-		height: 100%;
-		float: left;
-		/*border: 2px solid black;*/
-	}
-	.row2_col2{
-		box-sizing: border-box;
-		width: 70%;
-		height: 100%;
-		/*border: 2px solid blue;*/
-		float: left;
-		background-color: #ebebe0;
-	}
-	.row2_col2_row1{
-		box-sizing: border-box;
-		width: 100%;
-		height: 20%;
-		/*border: 2px solid red;*/
-	}
-	.row2_col2_row1_col1{
-		box-sizing: border-box;
-		width:20%;
-		height: 100%;
-		float: left;
-		/*border: 2px solid blue;*/
-	}
-	.row2_col2_row1_col2{
-		box-sizing: border-box;
-		width: 80%;
-		height: 100%;
-		float: left;
-		/*border: 2px solid blue;8*/
-	}
-	.row2_col2_row2{
-		box-sizing: border-box;
-		width: 100%;
-		height: 15%;
-		/*border: 2px solid red;*/
-	}
-	.row2_col2_row2_col3{
-		box-sizing: border-box;
-		float: left;
-		width: 60%;
-		height: 100%;
-		/*border: 2px solid blue;*/
-	}
-	.row2_col2_row3{
-		box-sizing: border-box;
-		width: 100%;
-		height: 15%;
-		/*border: 2px solid black;*/
-		text-align: center;
-	}
-	#form_input{
-		box-sizing: border-box;
-		width:40%;
-		height: 70%;
-		margin-top: 5px;
-		border-style: initial;
-	}
-	#submit_button{
-		box-sizing: border-box;
-		width: 40%;
-		height: 80%;
-		background-color: red;
-		color: white;
-	}
-	#form{
-		box-sizing: border-box;
-		width: 100%;
-		height:70%;
-		/*border: 2px solid green;*/ 
-	}
+.row::after{
+	content: "";
+	display: block;
+	clear: both;
+}
+.row.row1{
+	box-sizing: border-box;
+	width: 100%;
+}
+.row1-col1{
+	box-sizing: border-box;
+	float: left;
+	width: 28%;
+	margin-top: 60px;
+}
+.row1-col2{
+	box-sizing: border-box;
+	float: left;
+	width: 72%;
+	height: 135px;
+	background-color: 	rgb(245, 245, 240);
+}
+.row1-col1-col1{
+	box-sizing: border-box;
+	float: left;
+	width: 40%;
+}
+.row1-col1-col2{
+	box-sizing: border-box;
+	float: left;
+	width: 60%;
+}
+.row.logo{
+	box-sizing: border-box;
+	width: 100%;
+	padding-left: 95px;
+}
+.row.heading{
+	box-sizing: border-box;
+	width: 100%;
+}
+.row.slogan{
+	box-sizing: border-box;
+	width: 100%;
+	text-align: center;
+	font-size: x-small;
+	padding-right: 110px;
+}
+#ungineering{
+	margin-top: 10px;
+	margin-bottom: 0px;
+}
+#hr{
+
+    margin-top: 2px;
+    margin-bottom: 2px;
+    margin-right: 105px;
+}
+#slogan{
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+#red{
+	color: red;
+}
+
+.row2{
+	box-sizing: border-box;
+	width: 100%;
+}
+.row2-col1{
+	box-sizing: border-box;
+	width: 28%;
+	float: left;
+}
+.row.row2-col1-row1{
+	width: 100%;
+}
+.row.row2-col1-row2{
+	width: 100%;
+}
+
+.row2-col2{
+	box-sizing: border-box;
+	width: 72%;
+	height: 532px;
+	float: left;
+	background-color: rgb(245, 245, 240);
+}
+.newuser{
+	box-sizing: border-box;
+	width: 100%;
+	padding-left: 115px;
+	padding-top: 75px;
+	font-family: sans-serif;
+	color: rgb(122, 122, 123);
+}
+.link{
+	box-sizing: border-box;
+	width: 100%;
+	padding-left: 115px;
+	padding-top: 20px;
+	font-family: sans-serif;
+}
+#heading{
+	margin: 0px;
+}
+
+.row2-col2-row1{
+	box-sizing: border-box;
+	width: 100%;
+}
+.form-heading{
+	box-sizing: border-box;
+	width: 100%;
+	padding-top: 75px;
+	padding-left: 90px;
+	color: rgb(122, 122, 123);
+	font-family: sans-serif;
+}
+.row.row2-col2-row2{
+	box-sizing: border-box;
+	width: 100%;
+}
+.row2-col2-row2-col1{
+	box-sizing: border-box;
+	float: left;
+	width: 22%;
+}
+.row2-col2-row2-col2{
+	box-sizing: border-box;
+	float: left;
+	width: 78%;
+}
+.name{
+	padding-left: 90px;
+	font-family: sans-serif;
+}
+.button{
+	box-sizing: border-box;
+	width: 100%;
+	padding-left: 22%;
+}
+#header{
+	margin-top: 0px;
+}
+.box{
+	font-size: medium;
+	padding: 0px;
+    height: 36px;
+    width: 410px;
+    border: 0px;
+    border-radius: 4px;
+}
+.box.button{
+	color: white;
+	background-color: red;
+	font-family: sans-serif;
+}
+.link.form{
+	padding-left: 350px;
+}

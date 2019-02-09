@@ -5,104 +5,103 @@
 		<link rel="stylesheet" type="text/css" href="/social_media/static/css/registration.css">
 	</head>
 	<body style="margin: 0px;">
-		<div class="container">
-			<div class="row1">
-				<div class="col1">
-					<div class="col1_row">
-					</div>
-					<div class="col1_row_logo">
-						<div class="col1_row_logo_col1">
-						</div>
-						<div class="col1_row_logo_col2">
-							<img src="/social_media/static/img/ungineering_logo.svg" alt="ungineering_logo">
-						</div>
-						<div class="col1_row_logo_col3">
-							<div class="logo_row1">
-								<h1 style="margin: 0px;"><strong style="color: red;">Un</strong><strong>gineering</strong></h1>
-								<hr class="hr">
-							</div>
-							<div class="logo_row2">
-								<p id="slogan">A <span style="color: red;">bit </span>of knowledge is good</p>
-							</div>
-							<div class="logo_row2">
-								<p id="slogan">A <span style="color:red;">byte </span>is better</p>
-							</div>
-							<div class="logo_row2"></div>
-						</div>
-					</div>
-					<div class="col1_row">
+		<!--header-->
+		<div class="row row1">
+			<div class="row1-col1">
+				<div class="row1-col1-col1">
+					<div class="row logo">
+						<img src="/social_media/static/img/ungineering_logo.svg" style="width: 54px;height: 70px;">
 					</div>
 				</div>
-				<div class="col2">
+				<div class="row1-col1-col2">
+					<div class="row heading">
+						<h2 id="ungineering"><span id="red">un</span>gineering</h2>
+						<hr id="hr">
+					</div>
+					<div class="row slogan">
+						<p id="slogan">A <span id="red">bit</span> of knowledge is good.<br>A <span id="red">byte</span> is better</p>
+					</div>
 				</div>
 			</div>
-			<div class="row2">
-				<div class="row2_col1">
-					<div class="row2_col1_row1">
-						<div class="row2_col1_row1_col1">
-						</div>
-						<div class="row2_col1_row1_col2">
-							<h1><strong style="color:grey;">NEW USER<br>CREATE<br>ACCOUNT</strong></h1>
-						</div>
-					</div>
-					<div class="row2_col1_row1">
-						<div class="row2_col1_row1_col1">
-						</div>
-						<div class="row2_col1_row1_col2">
-							<a href="#"  style="color: red;">Existing User Log-in</a>
-						</div>
+			<div class="row1-col2">
+				
+			</div>
+		</div>
+		<!--header over--->
+		<div class="row row2">
+			<!--left--->
+			<div class="row2-col1">
+				<div class="row row2-col1-row1">
+					<div class="newuser">
+						<h1 id="heading">New User<br>Create<br>Account</h1>
+					</div>					
+				</div>
+				<div class="row row2-col1-row2">
+					<div class="link">
+						<a href="#" id="red">Existing User Log-in</a>
 					</div>
 				</div>
-				<div class="row2_col2">
-					<div class="row2_col2_row1">
-						<div class="row2_col2_row1_col1">
-						</div>
-						<div class="row2_col2_row1_col2">
-							<h1>Create Account</h1>
-						</div>
+			</div>
+			<!--left over-->
+
+			<!--form-->
+			<div class="row2-col2">
+				<form>
+					<div class="row2-col2-row1">
+						<div class="form-heading">
+							<h1 id="header">Create Account</h1>
+						</div>						
 					</div>
-					<form action="/social_media/index.php/home/register_submit" method="POST" id="form">
-						<div class="row2_col2_row2">
-							<div class="row2_col2_row1_col1">
-							</div>
-							<div class="row2_col2_row1_col1">
+					<div class="row row2-col2-row2">
+						<div class="row2-col2-row2-col1">
+							<div class="name">
 								<p>Name</p>
 							</div>
-							<div class="row2_col2_row2_col3">
-								<input type="text" name="username" id="form_input">
+						</div>
+						<div class="row2-col2-row2-col2">
+							<div class="input">
+								<input type="text" name="name" class="box">
 							</div>
 						</div>
-						<div class="row2_col2_row2">
-							<div class="row2_col2_row1_col1">
-							</div>
-							<div class="row2_col2_row1_col1">
+					</div>
+					<div class="row row2-col2-row2">
+						<div class="row2-col2-row2-col1">
+							<div class="name">
 								<p>Email</p>
 							</div>
-							<div class="row2_col2_row2_col3">
-								<input type="email" name="email" id="form_input">
+						</div>
+						<div class="row2-col2-row2-col2">
+							<div class="input">
+								<input type="email" name="email" class="box">
 							</div>
 						</div>
-
-						<div class="row2_col2_row2">
-							<div class="row2_col2_row1_col1">
-							</div>
-							<div class="row2_col2_row1_col1">
+					</div>
+					<div class="row row2-col2-row2">
+						<div class="row2-col2-row2-col1">
+							<div class="name">
 								<p>Password</p>
 							</div>
-							<div class="row2_col2_row2_col3">
-								<input type="password" name="password" id="form_input">
+						</div>
+						<div class="row2-col2-row2-col2">
+							<div class="input">
+								<input type="password" name="password"  class="box">
 							</div>
 						</div>
-
-						<div class="row2_col2_row3">
-							<button type="submit" onclick="submit" id="submit_button">Create Account</button>
+					</div>
+					<div class="row row2-col2-row2">
+						<div class="button">
+							<input type="submit" value="Create Account"  class="box button">
 						</div>
-						<div class="row2_col2_row3">
-							<a href="#" style="color: red;">Existing User Log-in</a>
+					</div>
+					<div class="row row2-col2-row2">
+						<div class="link form">
+							<a href="#" id="red">Existing User Log-in</a>
 						</div>
-					</form>
-				</div>
+					</div>
+				</form>
 			</div>
+			<!--form end-->
+
 		</div>
 	</body>
 </html>
