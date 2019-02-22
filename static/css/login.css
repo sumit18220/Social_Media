@@ -1,0 +1,127 @@
+.container{
+	margin: 0px;
+}
+.row::after{
+	content: "";
+	display: block;
+	clear:both;
+}
+
+.col{
+	float:left;
+	box-sizing: border-box;
+}
+.heading-left{
+	width: 30%;
+	margin-top: 35px;
+}
+.heading-blank{
+	width: 70%;
+	height: 120px;
+	background-color: rgb(245, 245, 240);
+}
+.logo{
+	width: 40%;
+}
+.heading{
+	width: 50%;
+}
+
+#img{
+	height: 70px;
+	padding-left: 110px;
+}
+#ungineering-heading{
+	margin-top: 10px;
+	margin-bottom: 0px;
+	font-family: sans-serif;
+}
+#hr{
+	margin-top: 0px;
+	margin-bottom: 0px;
+	margin-right: 60px;
+}
+#slogan-paragraph{
+
+    margin-top: 0px;
+    text-align: center;
+    font-size: x-small;
+    padding-right: 60px;
+}
+#red{
+	color: red;
+}
+.heading-left-bottom{
+	width: 30%;
+}
+.form{
+	width: 70%;
+	background-color: rgb(245, 245, 240);
+	height: 549px;
+}
+
+#user{
+	color:rgb(122, 122, 123);
+	margin-left: 130px;
+	margin-top: 80px;
+	font-family: sans-serif;
+}
+#link{
+	margin-left: 130px;
+	color: red;
+}
+#form-heading{
+	margin-top: 80px;
+	margin-left: 120px;
+	font-family: sans-serif;
+	color: rgb(122, 122, 123);
+}
+
+.col-name{
+	width: 25%;
+}
+.col-box{
+	width: 75%;
+}
+
+.col-input{
+	width: 75%;
+}
+
+#email{
+	margin-left: 120px;
+	font-family: sans-serif;
+}
+.box{
+	border: 0px;
+	width: 420px;
+	height: 38px;
+	font-size: medium;
+	font-family: sans-serif;
+}
+
+.row-form{
+	margin-bottom: 15px;
+}
+.button{
+	color: white;
+	margin-bottom: 30px;
+	/*margin-left: 235px;*/
+	background-color: red;
+	width: 425px;
+	padding: 0px;
+	border: 0px;
+}
+#link2{
+	color: red;
+	padding-right: 290px;
+	/*margin-left: 360px;*/
+}
+#box-button{
+	margin-left: 25%;
+
+}
+#anchor{
+	margin-left: 25%;
+	text-align: center;
+}
