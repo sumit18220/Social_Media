@@ -1,107 +1,59 @@
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+?>
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<title>Registration</title>
-		<link rel="stylesheet" type="text/css" href="/social_media/static/css/registration.css">
-	</head>
-	<body style="margin: 0px;">
-		<!--header-->
-		<div class="row row1">
-			<div class="row1-col1">
-				<div class="row1-col1-col1">
-					<div class="row logo">
-						<img src="/social_media/static/img/ungineering_logo.svg" style="width: 54px;height: 70px;">
-					</div>
-				</div>
-				<div class="row1-col1-col2">
-					<div class="row heading">
-						<h2 id="ungineering"><span id="red">un</span>gineering</h2>
-						<hr id="hr">
-					</div>
-					<div class="row slogan">
-						<p id="slogan">A <span id="red">bit</span> of knowledge is good.<br>A <span id="red">byte</span> is better</p>
-					</div>
-				</div>
-			</div>
-			<div class="row1-col2">
-				
-			</div>
-		</div>
-		<!--header over--->
-		<div class="row row2">
-			<!--left--->
-			<div class="row2-col1">
-				<div class="row row2-col1-row1">
-					<div class="newuser">
-						<h1 id="heading">New User<br>Create<br>Account</h1>
-					</div>					
-				</div>
-				<div class="row row2-col1-row2">
-					<div class="link">
-						<a href="#" id="red">Existing User Log-in</a>
-					</div>
-				</div>
-			</div>
-			<!--left over-->
-
-			<!--form-->
-			<div class="row2-col2">
-				<form>
-					<div class="row2-col2-row1">
-						<div class="form-heading">
-							<h1 id="header">Create Account</h1>
-						</div>						
-					</div>
-					<div class="row row2-col2-row2">
-						<div class="row2-col2-row2-col1">
-							<div class="name">
-								<p>Name</p>
-							</div>
-						</div>
-						<div class="row2-col2-row2-col2">
-							<div class="input">
-								<input type="text" name="name" class="box">
-							</div>
-						</div>
-					</div>
-					<div class="row row2-col2-row2">
-						<div class="row2-col2-row2-col1">
-							<div class="name">
-								<p>Email</p>
-							</div>
-						</div>
-						<div class="row2-col2-row2-col2">
-							<div class="input">
-								<input type="email" name="email" class="box">
-							</div>
-						</div>
-					</div>
-					<div class="row row2-col2-row2">
-						<div class="row2-col2-row2-col1">
-							<div class="name">
-								<p>Password</p>
-							</div>
-						</div>
-						<div class="row2-col2-row2-col2">
-							<div class="input">
-								<input type="password" name="password"  class="box">
-							</div>
-						</div>
-					</div>
-					<div class="row row2-col2-row2">
-						<div class="button">
-							<input type="submit" value="Create Account"  class="box button">
-						</div>
-					</div>
-					<div class="row row2-col2-row2">
-						<div class="link form">
-							<a href="#" id="red">Existing User Log-in</a>
-						</div>
-					</div>
+    <head>
+        <title>Login</title>
+        <link rel="stylesheet" href="/social_media/static/css/bootstrap.css" type="text/css"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <div class="jumbotron jumbotron-fluid">
+        	<div class="container">
+        		<div class="row">
+        			<div class="col-sm-offset-2">
+        				<img src="/social_media/static/img/ungineering_logo.svg">
+        			</div>
+        			<div class="col-sm-10">
+    					<h1 class="display-3">Ungineering Social Account</h1>
+        			</div>
+        		</div>
+        	</div>
+        </div>
+        <div class="container">
+        	<div class="row">
+        		<div class="col-sm">
+        			<h3 style="text-align: center;">Log In to Ungineering Social Account</h3>
+        		</div>
+        	</div>
+    		<div class="container">
+    			<form action="/social_media/index.php/home/register_submit" method="POST">
+                      <div class="form-group">
+                        <label for="name">Name :</label>
+                        <input type="text" class="form-control" name="username">
+                      </div>
+					  <div class="form-group">
+					    <label for="email">Email address:</label>
+					    <input type="email" class="form-control" name="email">
+					  </div>
+					  <div class="form-group">
+					    <label for="pwd">Password:</label>
+					    <input type="password" class="form-control" name="password">
+					  </div>
+					  <div class="form-group form-check">
+					    <label class="form-check-label">
+					      <input class="form-check-input" type="checkbox"> Remember me
+					    </label>
+					  </div>
+				  <button type="submit" class="btn btn-primary">Submit</button>
 				</form>
-			</div>
-			<!--form end-->
-
-		</div>
-	</body>
+    		</div>
+    		<div>
+    			<p style="text-align: right;">Already Registered..?<a href="/social_media/index.php/home/login">LogIn</a>Here</p>
+    		</div>
+        </div>
+    </body>
 </html>
+

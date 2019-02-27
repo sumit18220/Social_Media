@@ -15,86 +15,91 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	//print_r($statuses);	
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 	<head>
-		<title>HomePage</title>
-		<link rel="stylesheet" href="/social_media/static/css/bootstrap.css" type="text/css"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta charset="utf-8">
+		<title>Homepage</title>
+		<link rel="stylesheet" type="text/css" href="/social_media/static/css/homepage.css">
 	</head>
-	<body>
-		<div class="container-fluid">
-			<div class="row" style="background: #e6e2d3;">
-				<div class="col-sm-1">
-					<img src="/social_media/static/img/ungineering_logo.svg" style="width: 50px;height: 62px;">
+	<body class="container">
+		<div class="row">
+			<div class="col left-header">
+				<div class="col logo1">
+					<img class="img" src="/social_media/static/img/ungineering_logo.svg">
 				</div>
-				<div class="col-sm-6" style="margin-top: 15px; color: black">
-					<h4>Ungineering Social Account</h4>
+				<div class="col logo">
+					<div class="row">
+						<h2 class="ungineering"><span class="red">un</span>gineering</h2>
+						<hr class="hr">
+					</div>
+					<div class="row">
+						<p class="slogan">A <span class="red">bit</span> of knowledge is good <br> A <span class="red">byte</span> is better</p>
+					</div>
 				</div>
+			</div>
+			<div class="col right-header">
+				<?php if($user_name!=NULL) { ?>
+					<div class="col username">
+						 <h4 class="dash user">Hi.. <?php echo $user_name ?> </h4> 
+					</div>
+				<?php } ?>
 
-				<div class="col-sm-1" style="margin-top: 15px">
-					<?php if ($user_name!=NULL) {
-						echo " <h4 style='color:black'>".$user_name."</h4>";
-					}
-					?>
-				</div>
-				
-				<div class="col-sm-2" style="margin-top: 8px">
-					<?php if($user_name!=NULL)
-							echo "<a href='/social_media/index.php/home/dashboard' class='btn'><h4 style='color: black'>DashBoard</h4> </a>";
-					?>
-				</div>
-				
-				<div class="col-sm-2" style="margin-top: 8px;">
+				<?php if($user_name!=NULL) { ?> 
+					<div class="col dashboard">
+						<a href="/social_media/index.php/home/dashboard" class="dash"> My Dashboard </a>
+					</div>
+				<?php } ?>
+
+				<div class="col logout">
 					<?php if($user_name!=NULL) { ?>
-							<a href='/social_media/index.php/home/logout' class='btn'><h4 style='color: black'>Logout</h4></a>
-					<?php	}
-							else { ?>
-								<a href='/social_media/index.php/home/login' class='btn'><h4 style='color: black'>Login</h4></a>
-					<?php		}
-					?>
+						<a href="/social_media/index.php/home/logout" class="dash">Logout</a>
+					<?php } 	
+
+						else {?>
+							<a href="/social_media/index.php/home/login" class="dash">Login</a>
+					<?php } ?>
+				</div>
+
+				<?php if($user_name==NULL) { ?>
+					<div class="col new-user">
+						<a href="/social_media/index.php/home/registration" class="new">New User</a>
+					</div>
+				<?php } ?>
+			</div>
+		</div>
+		<!--header over-->
+		<?php if($user_name!=NULL) { ?>
+			<div class="row back">
+				<div class="col something">
+					<h1 class="font-style">Write something here</h1>
 				</div>
 			</div>
-		</div>
-		<div class="container">
-		<?php
-			if($user_name!=NULL)
-			{
-				echo "
-						<div class='row'>
-							<div class='col-sm-3'>
-								<h6>"
-			                            . 'Hi..'.$user_name."
-			                        
-			                    </h6>
-							</div>
-							<div class='col-sm-6'>
-								<form action='/social_media/index.php/home/status_submit'  method='POST'>
-									<div class='form-group shadow-textarea'>
-										<label for='post'>Write Your Post Here</label>
-										<textarea class='form-control z-depth-1' id='exampleFormControlTextarea6' rows='3' placeholder='Write something here...' name='status'></textarea>
-										<button type='submit' class='btn btn-primary float-right'>Post</button>
-									</div>
-								</form>
-							</div>
-						</div>
-			
-					";
-			}
-		?>
-			<div class="row">
-				<?php foreach ($statuses as $status) {
-					# code...
-					echo $status['status']."  "." ".$status['date'];
 
-				?>
-					<br>
+			<!--Comment box-->
+			<form action='/social_media/index.php/home/status_submit'  method='POST'>
+				<div class="row back">
+					<div class="col something">
+						<input type="text" name="status" class="comment-box">
+					</div>
+				</div>
+				<div class="row back">
+					<div class="col something">
+						<input type="submit" value="Submit" class="button-box">
+						<hr class="underline">
+					</div>
+				</div>
+			</form>
+		<!--comment box ends-->
+		<?php } ?>
 
-				<?php
-				}
-				?>
+		<?php foreach ($statuses as $status) { ?>
+			<div class="row back">
+				<div class="col stat">
+					<h4 class="status-name font-style">Name</h4><br>
+					<p class="comment font-style"> <?php echo $status['status']; ?> </p><br>
+					<p class="time font-style">Time :<?php echo $status['date']?> </p>
+				</div>
 			</div>
-		</div>
+		<?php } ?>
 
 	</body>
 </html>

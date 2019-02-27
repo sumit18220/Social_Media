@@ -84,7 +84,7 @@ class User extends CI_Model {
     }
     function fetch_status(){
 
-        $query=$this->db->query("SELECT * FROM statuses");
+        $query=$this->db->query("SELECT * FROM statuses ORDER BY id DESC");
 
         $row= $query->result_array();
         

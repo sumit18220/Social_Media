@@ -97,4 +97,8 @@ class Home extends CI_Controller {
     public function test4(){
         $this->load->view("login2");
     }
+
+    public function test5(){
+        $this->load->view("homepage2");
+    }
 }
