@@ -13,7 +13,8 @@
 }
 .left-header{
 	width: 30%;
-	margin-top:  20px;
+	padding-top:  20px;
+	padding-bottom: 7px;
 
 }
 .right-header{
@@ -28,7 +29,7 @@
 }
 .img{
 	height: 70px;
-	margin-left: 66px;
+	padding-left: 66px;
 }
 .ungineering{
 	margin-top: 5px;
@@ -47,41 +48,46 @@
     margin-bottom: 0px;
 }
 .red{
-	color: red;
+	color: #FC2656;
 }
 .dashboard{
-	margin-bottom: 15px;
-	margin-top: 65px;
-	margin-right: 25px;
-	margin-left: 30px;
+	padding-bottom: 15px;
+	padding-top: 65px;
+	padding-right: 25px;
+	padding-left: 30px;
 }
 .logout{
-	margin-bottom: 15px;
-	margin-top: 60px;
-	border: 1px solid red;
+	padding-top: 65px;	
+}
+.log{
+	border: 1px solid;
 	padding-left: 35px;
 	padding-right: 35px;
 	padding-top: 3px;
 	padding-bottom: 3px;
+	border-radius: 2px;
+}
+#padd{
+	margin-left: 50px;
 }
 .new{
 	text-decoration: none;
 	color: white;	
+	background-color: red;
+	padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 3px;
+    padding-bottom: 5px;
+    border-radius: 2px;
 }
 .new-user{
-	margin-bottom: 15px;
-	margin-top: 60px;
-	border: 1px solid red;
-	padding-left: 35px;
+	padding-top: 64px;
+	padding-left: 12px;
 	padding-right: 35px;
-	padding-top: 3px;
-	padding-bottom: 3px;
-	margin-left: 10px;
-	background-color: red;
 }
 .dash{
 	text-decoration: none;
-	color: red;	
+	color: #D90022;	
 }
 .something{
 	margin-right: 20%;
@@ -93,6 +99,8 @@
 	height: 120px;
 }
 .button-box{
+	border-radius: 2px;
+	font-size: 108%;
 	margin-left: 86%;
 	margin-top: 20px;
 	width: 120px;
@@ -103,15 +111,14 @@
 	border: 0px;
 }
 .username{
-	margin-top: 65px;
-	margin-bottom: 15px;
+	padding-top: 65px;
 }
 .user{
 	margin: 0px;
 	text-transform: capitalize;
 }
 .underline{
-	margin-bottom: 0px;
+	margin-bottom: 5%;
 	border: 0 none;
 	border-top: 2px dashed #322f326e;
 	background: none;
@@ -121,7 +128,7 @@
 	background-color: white;
 	margin-right: 20%;
 	margin-left: 20%;
-	margin-top: 2%;
+	margin-bottom: 1.5%;
 	width: 60%;
 	padding-left: 3%;
 	border-style: solid;
@@ -130,16 +137,20 @@
 }
 .status-name{
 	margin-bottom: 0px;
-}
-.comment{
-	margin: 0px;
+	font-family: sans-serif;
+	color: #000000;
 }
 .time{
-	margin: 0px;
+	color: #4B4849;
+	font-family: sans-serif;
 }
 .back{
-	background-color: rgb(245, 245, 240);
+	background-color: #F4F4F4;
 }
 .font-style{
 	font-family: sans-serif;
+	color: #747374;
+}
+.blank{
+	padding-bottom: 60px;
 }

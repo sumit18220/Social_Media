@@ -1,0 +1,74 @@
+.row::after{
+	content: "";
+	display: block;
+	clear: both;
+}
+.col{
+	float: left;
+	box-sizing: border-box;
+}
+.my_dash{
+	padding-top: 50px;
+	padding-left: 30px;
+	padding-right: 30px;
+}
+.detail{
+	width: 47%;
+	background-color: #F4F4F4;
+	margin-left: 3%;
+}
+.posts{
+	width: 46%;
+	background-color: #F4F4F4;
+	margin-left: 2%;
+}
+.account{
+	padding-left: 38%;
+	padding-top: 10%;
+	padding-bottom: 2.5%;
+	margin: 0px;
+	color: #747474;
+	font-family: sans-serif;
+}
+.left-col{
+	width: 25%;
+}
+.right-col{
+	width: 75%;
+	margin-bottom: 2.3%;
+}
+.para{
+	padding-left: 27%;
+	margin: 0px;
+	padding-top: 9%;
+	font-family: sans-serif;
+}
+.text-box{
+	margin-left: 5%;
+	width: 80%;
+	height: 40px;
+	border: 2px;
+	border-radius: 2px;
+	border-color: initial;
+}
+.update{
+	margin-left: 28.5%;
+	background-color: #FF1A53;
+	border: 0px;
+	width: 18%;
+	color: white;
+	padding-top: 9px;
+	padding-bottom: 10px;
+	font-size: inherit;
+	border-radius: 2px;
+	margin-bottom: 10%;
+}
+.my-post{
+
+    padding-top: 7.5%;
+    padding-bottom: 2.5%;
+    padding-left: 7%;
+    margin: 0px;
+    color: #747474;
+    font-family: sans-serif;
+}

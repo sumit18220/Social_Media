@@ -82,6 +82,7 @@ class User extends CI_Model {
         $id = $_COOKIE['user_id'];
         $query=$this->db->query("UPDATE users SET Phone_Number = '$mobile_no', College= '$college' WHERE Id = $id;");
     }
+    
     function fetch_status(){
 
         $query=$this->db->query("SELECT * FROM statuses ORDER BY id DESC");

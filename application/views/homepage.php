@@ -51,24 +51,25 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 				<div class="col logout">
 					<?php if($user_name!=NULL) { ?>
-						<a href="/social_media/index.php/home/logout" class="dash">Logout</a>
+						<a href="/social_media/index.php/home/logout" class="dash log" >Logout</a>
 					<?php } 	
 
 						else {?>
-							<a href="/social_media/index.php/home/login" class="dash">Login</a>
+							<a href="/social_media/index.php/home/login" class="dash log" id="padd">Login</a>
 					<?php } ?>
 				</div>
 
 				<?php if($user_name==NULL) { ?>
 					<div class="col new-user">
-						<a href="/social_media/index.php/home/registration" class="new">New User</a>
+						<a href="/social_media/index.php/home/registration" class="new">New user</a>
 					</div>
 				<?php } ?>
 			</div>
 		</div>
 		<!--header over-->
-		<?php if($user_name!=NULL) { ?>
-			<div class="row back">
+		<div class="row back">
+			<?php if($user_name!=NULL) { ?>
+			<div class="row">
 				<div class="col something">
 					<h1 class="font-style">Write something here</h1>
 				</div>
@@ -76,12 +77,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 			<!--Comment box-->
 			<form action='/social_media/index.php/home/status_submit'  method='POST'>
-				<div class="row back">
+				<div class="row">
 					<div class="col something">
 						<input type="text" name="status" class="comment-box">
 					</div>
 				</div>
-				<div class="row back">
+				<div class="row">
 					<div class="col something">
 						<input type="submit" value="Submit" class="button-box">
 						<hr class="underline">
@@ -91,15 +92,23 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<!--comment box ends-->
 		<?php } ?>
 
+		<?php if($user_name==NULL){ ?>
+				<div class="row blank">
+					
+				</div>
+		<?php } ?>
+
 		<?php foreach ($statuses as $status) { ?>
-			<div class="row back">
+			<div class="row">
 				<div class="col stat">
-					<h4 class="status-name font-style">Name</h4><br>
-					<p class="comment font-style"> <?php echo $status['status']; ?> </p><br>
-					<p class="time font-style">Time :<?php echo $status['date']?> </p>
+					<h4 class="status-name">Name</h4>
+					<p class="font-style"> <?php echo $status['status']; ?> </p>
+					<p class="time">Time :<?php echo $status['date']?> </p>
 				</div>
 			</div>
 		<?php } ?>
 
+			
+		</div>
 	</body>
 </html>
