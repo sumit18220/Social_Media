@@ -42,7 +42,7 @@
                 </div>
                 <div class="row row2-col1-row2">
                     <div class="link">
-                        <a href="/social_media/index.php/home/login" id="red">Existing User Log-in</a>
+                        <a href="/social_media/index.php/login" id="red">Existing User Log-in</a>
                     </div>
                 </div>
             </div>
@@ -50,7 +50,7 @@
 
             <!--form-->
             <div class="row2-col2">
-                <form action="/social_media/index.php/home/register_submit" method="POST">
+                <form action="/social_media/index.php/registration/register_submit" method="POST">
                     <div class="row2-col2-row1">
                         <div class="form-heading">
                             <h1 id="header">Create Account</h1>
@@ -64,7 +64,7 @@
                         </div>
                         <div class="row2-col2-row2-col2">
                             <div class="input">
-                                <input type="text" name="username" class="box">
+                                <input type="text" name="username" class="box" required>
                             </div>
                         </div>
                     </div>
@@ -76,7 +76,7 @@
                         </div>
                         <div class="row2-col2-row2-col2">
                             <div class="input">
-                                <input type="email" name="email" class="box">
+                                <input type="email" name="email" class="box" required>
                             </div>
                         </div>
                     </div>
@@ -88,7 +88,7 @@
                         </div>
                         <div class="row2-col2-row2-col2">
                             <div class="input">
-                                <input type="password" name="password"  class="box">
+                                <input type="password" name="password"  class="box" required>
                             </div>
                         </div>
                     </div>
@@ -99,7 +99,7 @@
                     </div>
                     <div class="row row2-col2-row2">
                         <div class="link form">
-                            <a href="/social_media/index.php/home/login" id="red">Existing User Log-in</a>
+                            <a href="/social_media/index.php/login" id="red">Existing User Log-in</a>
                         </div>
                     </div>
                 </form>

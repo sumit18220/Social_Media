@@ -1,96 +1,64 @@
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+?>
+<?php
+		if(isset($_COOKIE['user_id']) || isset($_COOKIE['user_name']))
+		{
+			$user_name=$_COOKIE['user_name'];
+			$user_id=$_COOKIE['user_id'];
+		}
+		else
+		{
+			$user_name=NULL;
+			$user_id=NULL;
+		}
+?>
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Dashboard</title>
-	<link rel="stylesheet" type="text/css" href="/social_media/static/css/dashboard.css">
-	<link rel="stylesheet" type="text/css" href="/social_media/static/css/homepage.css">
-</head>
-	<body class="container">
-		<div class="row">
-			<div class="col left-header">
-				<div class="col logo1">
-					<img class="img" src="/social_media/static/img/ungineering_logo.svg">
-				</div>
-				<div class="col logo">
-					<div class="row">
-						<h2 class="ungineering"><span class="red">un</span>gineering</h2>
-						<hr class="hr">
-					</div>
-					<div class="row">
-						<p class="slogan">A <span class="red">bit</span> of knowledge is good <br> A <span class="red">byte</span> is better</p>
-					</div>
-				</div>
-			</div>
-			<div class="col right-header">
-					<div class="col my_dash">
-						<p>My Dashboard</p>
-					</div>
-
-				<div class="col logout">
-						<a href="/social_media/index.php/home/logout" class="dash log" >Logout</a>
-				</div>
-			</div>
-		</div>
-		<!--header end-->
-
-		<div class="row">
-			<div class="col detail">
-				<div class="row">
-					<div class="col right-col">
-						<h1 class="account">My Account Details</h1>
-					</div>
-				</div>
-				<form>
-					<div class="row">
-						<div class="col left-col">
-							<p class="para">Name</p>
-						</div>
-						<div class="col right-col">
-							<input type="text" name="username" class="text-box">
-						</div>
-					</div>
-					<div class="row">
-						<div class="col left-col">
-							<p class="para">Email</p>
-						</div>
-						<div class="col right-col">
-							<input type="email" name="email" class="text-box">
-						</div>
-					</div>
-					<div class="row">
-						<div class="col left-col">
-							<p class="para">Password</p>
-						</div>
-						<div class="col right-col">
-							<input type="password" name="password" class="text-box">
-						</div>
-					</div>
-					<div class="row">
-						<div class="col left-col">
-							<p class="para">College</p>
-						</div>
-						<div class="col right-col">
-							<input type="text" name="college_name" class="text-box">
-						</div>
-					</div>
-					<div class="row">
-						<div class="col left-col">
-							<p class="para">Phone Number</p>
-						</div>
-						<div class="col right-col">
-							<input type="number" name="phone_number" class="text-box">
-						</div>
-					</div>
-					<div class="row">
-						<input type="submit" value="Update" class="update">
-					</div>
-				</form>
-			</div>
-			<div class="col posts">
-				<div class="row">
-					<h1 class="my-post">My Posts</h1>
-				</div>
-			</div>
-		</div>
-	</body>
+    <head>
+        <link rel="stylesheet" href="/social_media/static/css/bootstrap.css" type="text/css"/>
+        <link rel="stylesheet" href="/social_media/static/css/dashboard_css.css" type="text/css">
+        <title>Dashboard</title>
+    </head>
+    
+    <body>
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-1">
+                        <img class="logo" src="/social_media/static/img/ungineering_logo.svg">
+                    </div>
+                    <div class="col-lg-10">
+                        <h1 class="display-3">Update Your Account Here</h1>
+                    </div>
+                    <div class="col-lg-1">
+                        <a href=" /social_media/index.php/homepage/home_page"><button class="btn btn-success ">Home</button></a> 
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container bg">
+            <div class="row">
+                <div class="col-md-3 col-sm-2 col-xs-12"></div>
+                <div class="col-md-6 col-sm-8 col-xs-12">
+                    <form id="log" action="/social_media/index.php/dashboard/dashboard_submit" method="POST">
+                        <h1>Update User's Information</h1>
+                        <img class="img img-thumbnail" src="/social_media/static/img/img_avatar.png"/>
+                        <div>
+                            <label>College Name:</label>
+                            <input class="form-control" type="text" name="college" placeholder="college name" required=""/><br/>
+                        </div>
+                        <div>
+                            <label>Mobile Number:</label>
+                            <input class="form-control" type="text" name="mobile_no" placeholder="123456789" required=""/><br/>
+                        </div>
+                        <div>
+                            <button class="btn btn-success form-control" type="submit">Update</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-md-3 col-sm-2 col-xs-12"></div>
+            </div>
+        </div>
+    </body>
 </html>

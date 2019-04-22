@@ -72,3 +72,13 @@
     color: #747474;
     font-family: sans-serif;
 }
+.status{
+	border: 1px solid #CCC6C6;
+	background-color: white;
+	border-radius: 3px;
+	margin-left: 7%;
+	margin-right: 8%;
+	padding-left: 5%;
+	padding-right: 5%;
+	margin-bottom: 2.5%;
+}

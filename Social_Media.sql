@@ -55,3 +55,29 @@ some changes made by Bhuvan
 		    -> FOREIGN KEY(user_id) REFERENCES users(id)
 		    -> );
 
+*Deleted privious database and created new database (added UNIQUE key word).
+
+	(1)creating new database:-
+		CREATE DATABASE social_media;
+
+	(2)creating table users:-
+			-> CREATE TABLE users(
+    		-> id INT NOT NULL AUTO_INCREMENT,
+ 			-> name VARCHAR(255) NOT NULL,
+    		-> email VARCHAR(255) NOT NULL UNIQUE,
+			-> password VARCHAR(255) NOT NULL,
+			-> college VARCHAR(255),
+    		-> phone_number VARCHAR(255) UNIQUE,
+			-> PRIMARY KEY (id)
+    		-> );
+
+	(3)creating table statuses:-
+
+			->CREATE TABLE statuses(
+		    -> id INT NOT NULL AUTO_INCREMENT,
+		    -> user_id INT ,
+		    -> date DATETIME,
+		    -> status VARCHAR(255),
+		    -> PRIMARY KEY(id),
+		    -> FOREIGN KEY(user_id) REFERENCES users(id)
+		    -> );

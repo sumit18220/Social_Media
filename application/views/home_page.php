@@ -4,6 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <?php
 	if(isset($_COOKIE['user_id']) || isset($_COOKIE['user_name']))
 	{
+		//echo "1";
 		$user_name=$_COOKIE['user_name'];
 		$user_id=$_COOKIE['user_id'];
 	}
@@ -13,6 +14,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		$user_id=NULL;
 	}
 	//print_r($statuses);	
+	
 ?>
 <!DOCTYPE html>
 <html>
@@ -37,7 +39,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				</div>
 			</div>
 			<div class="col right-header">
-				<?php if($user_name!=NULL) { ?>
+				<?php if($user_name != NULL) { ?>
 					<div class="col username">
 						 <h4 class="dash user">Hi.. <?php echo $user_name ?> </h4> 
 					</div>
@@ -45,23 +47,23 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 				<?php if($user_name!=NULL) { ?> 
 					<div class="col dashboard">
-						<a href="/social_media/index.php/home/dashboard" class="dash"> My Dashboard </a>
+						<a href="/social_media/index.php/dashboard" class="dash"> My Dashboard </a>
 					</div>
 				<?php } ?>
 
 				<div class="col logout">
 					<?php if($user_name!=NULL) { ?>
-						<a href="/social_media/index.php/home/logout" class="dash log" >Logout</a>
+						<a href="/social_media/index.php/login/logout" class="dash log" >Logout</a>
 					<?php } 	
 
 						else {?>
-							<a href="/social_media/index.php/home/login" class="dash log" id="padd">Login</a>
+							<a href="/social_media/index.php/login" class="dash log" id="padd">Login</a>
 					<?php } ?>
 				</div>
 
 				<?php if($user_name==NULL) { ?>
 					<div class="col new-user">
-						<a href="/social_media/index.php/home/registration" class="new">New user</a>
+						<a href="/social_media/index.php/registration" class="new">New user</a>
 					</div>
 				<?php } ?>
 			</div>
@@ -76,7 +78,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			</div>
 
 			<!--Comment box-->
-			<form action='/social_media/index.php/home/status_submit'  method='POST'>
+			<form action='/social_media/index.php/homepage/status_submit'  method='POST'>
 				<div class="row">
 					<div class="col something">
 						<input type="text" name="status" class="comment-box">
@@ -101,7 +103,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<?php foreach ($statuses as $status) { ?>
 			<div class="row">
 				<div class="col stat">
-					<h4 class="status-name">Name</h4>
+					<h4 class="status-name"> <?php echo $status['name']?></h4>
 					<p class="font-style"> <?php echo $status['status']; ?> </p>
 					<p class="time">Time :<?php echo $status['date']?> </p>
 				</div>

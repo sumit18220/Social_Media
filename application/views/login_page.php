@@ -37,7 +37,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <h1 id="user">Existing User <br>Log-in</h1>
                 </div>
                 <div class="row">
-                    <a href="/social_media/index.php/home/registration" id="link">New User Create Account</a>
+                    <a href="/social_media/index.php/registration" id="link">New User Create Account</a>
                 </div>
             </div>
 
@@ -46,13 +46,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <div class="row">
                     <h1 id="form-heading">Log-in</h1>
                 </div>
-                <form action="/social_media/index.php/home/login_submit" method="POST">
+                <form action="/social_media/index.php/login/login_submit" method="POST">
                     <div class="row row-form">
                         <div class="col col-name">
                             <p id="email"> Email</p>
                         </div>
                         <div class="col col-box">
-                            <input type="email" name="email" class="box">
+                            <input type="email" name="email" class="box" required>
                         </div>
                     </div>
                     <div class="row row-form">
@@ -60,7 +60,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <p id="email">Password</p>
                         </div>
                         <div class="col col-box">
-                            <input type="password" name="password"  class="box">
+                            <input type="password" name="password"  class="box" required>
                         </div>
                     </div>
                     <div class="row">
@@ -70,7 +70,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     </div>
                     <div class="row">
                         <div class="col col-box" id="anchor">
-                            <a href="/social_media/index.php/home/registration" id="link2">New User Create Account</a>
+                            <a href="/social_media/index.php/registration" id="link2">New User Create Account</a>
                         </div>
                     </div>
                 </form>
