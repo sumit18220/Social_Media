@@ -12,20 +12,22 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             $user_name=NULL;
             $user_id=NULL;
         }
+       //$arr = $statuses["0"]['name'];
+       //print_r($statuses);
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
     <title>Dashboard</title>
-    <link rel="stylesheet" type="text/css" href="/social_media/static/css/dashboard.css">
-    <link rel="stylesheet" type="text/css" href="/social_media/static/css/homepage.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/dashboard.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/homepage.css">
 </head>
     <body class="container">
         <div class="row">
             <div class="col left-header">
                 <div class="col logo1">
-                    <a href="/social_media/index.php/homepage"><img class="img" src="/social_media/static/img/ungineering_logo.svg"> </a>
+                    <a href="/homepage"><img class="img" src="/static/img/ungineering_logo.svg"> </a>
                 </div>
                 <div class="col logo">
                     <div class="row">
@@ -43,7 +45,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     </div>
 
                 <div class="col logout">
-                        <a href="/social_media/index.php/login/logout" class="dash log" >Logout</a>
+                        <a href="/login/logout" class="dash log" >Logout</a>
                 </div>
             </div>
         </div>
@@ -56,13 +58,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <h1 class="account">My Account Details</h1>
                     </div>
                 </div>
-                <form action="/social_media/index.php/dashboard/dashboard_submit" method="POST">
+                <form action="/dashboard/dashboard_submit" method="POST">
                     <div class="row">
                         <div class="col left-col">
                             <p class="para">Name</p>
                         </div>
                         <div class="col right-col">
-                            <input type="text" name="name" class="text-box" required>
+                            <input type="text" name="name" class="text-box" value="<?php echo $user_data[0]['name']; ?> "required>
                         </div>
                     </div>
                     <div class="row">
@@ -70,7 +72,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <p class="para">Email</p>
                         </div>
                         <div class="col right-col">
-                            <input type="email" name="email" class="text-box" required>
+                            <input type="email" name="email" class="text-box" value="<?php echo $user_data[0]['email']; ?> " required>
                         </div>
                     </div>
                     <div class="row">
@@ -78,7 +80,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <p class="para">Password</p>
                         </div>
                         <div class="col right-col">
-                            <input type="password" name="password" class="text-box" required>
+                            <input type="password" name="password" class="text-box"  value="<?php echo $user_data[0]['password']; ?> " required>
                         </div>
                     </div>
                     <div class="row">
@@ -86,7 +88,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <p class="para">College</p>
                         </div>
                         <div class="col right-col">
-                            <input type="text" name="college_name" class="text-box">
+                            <input type="text" name="college_name" class="text-box" value="<?php echo $user_data[0]['college']; ?> ">
                         </div>
                     </div>
                     <div class="row">
@@ -94,7 +96,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <p class="para">Phone Number</p>
                         </div>
                         <div class="col right-col">
-                            <input type="text" name="phone_number" class="text-box">
+                            <input type="text" name="phone_number" class="text-box" value="<?php echo $user_data[0]['phone_number']; ?> ">
                         </div>
                     </div>
                     <div class="row">
@@ -107,11 +109,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <h1 class="my-post">My Posts</h1>
                 </div>
                 <?php foreach ($statuses as $status) { ?>
+
                     <div class="row status">
-                        <p class="time">Time : <?php echo $status['date']?> </p>
-                        <p class="font-style"> <?php echo $status['status']; ?> </p>
+                        <p class="time">Time : <?php  echo $status['date'];?> </p>
+                        <p class="font-style"> <?php  echo $status['status']; ?> </p>
                     </div>
-                <?php } ?>
+                <?php 
+            } ?>
             </div>
         </div>
     </body>

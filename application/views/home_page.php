@@ -20,13 +20,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <html>
 	<head>
 		<title>Homepage</title>
-		<link rel="stylesheet" type="text/css" href="/social_media/static/css/homepage.css">
+		<link rel="stylesheet" type="text/css" href="/static/css/homepage.css">
 	</head>
 	<body class="container">
 		<div class="row">
 			<div class="col left-header">
 				<div class="col logo1">
-					<img class="img" src="/social_media/static/img/ungineering_logo.svg">
+					<img class="img" src="/static/img/ungineering_logo.svg">
 				</div>
 				<div class="col logo">
 					<div class="row">
@@ -47,23 +47,23 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 				<?php if($user_name!=NULL) { ?> 
 					<div class="col dashboard">
-						<a href="/social_media/index.php/dashboard" class="dash"> My Dashboard </a>
+						<a href="/dashboard" class="dash"> My Dashboard </a>
 					</div>
 				<?php } ?>
 
 				<div class="col logout">
 					<?php if($user_name!=NULL) { ?>
-						<a href="/social_media/index.php/login/logout" class="dash log" >Logout</a>
+						<a href="/login/logout" class="dash log" >Logout</a>
 					<?php } 	
 
 						else {?>
-							<a href="/social_media/index.php/login" class="dash log" id="padd">Login</a>
+							<a href="/login" class="dash log" id="padd">Login</a>
 					<?php } ?>
 				</div>
 
 				<?php if($user_name==NULL) { ?>
 					<div class="col new-user">
-						<a href="/social_media/index.php/registration" class="new">New user</a>
+						<a href="/registration" class="new">New user</a>
 					</div>
 				<?php } ?>
 			</div>
@@ -78,7 +78,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			</div>
 
 			<!--Comment box-->
-			<form action='/social_media/index.php/homepage/status_submit'  method='POST'>
+			<form action='/homepage/status_submit'  method='POST'>
 				<div class="row">
 					<div class="col something">
 						<input type="text" name="status" class="comment-box">

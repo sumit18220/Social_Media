@@ -8,9 +8,12 @@
 	{
 	    public function dash_board(){
 	    	$this->load->model('status');
-	    	$arr_statuses = $this->status->fetch_status_dash();
-	    	
-	        $this->load->view("dash_board", array('statuses' => $arr_statuses));
+	    	$user_statuses = $this->status->fetch_status_dash();
+
+	    	$this->load->model('user');
+	    	$user_info = $this->user->fetch_user_info();
+
+	        $this->load->view("dash_board", array('user_data' => $user_info, 'statuses' => $user_statuses));
 	    }
 
     	public function dashboard_submit(){

@@ -6,14 +6,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <html>
     <head>
         <title>Login</title>
-        <link rel="stylesheet" type="text/css" href="/social_media/static/css/login.css">
+        <link rel="stylesheet" type="text/css" href="/static/css/login.css">
     </head>
     <body class="container">
         <!--heading--->
         <div class="row">
             <div class="col heading-left">
                 <div class="col logo">
-                    <img src="/social_media/static/img/ungineering_logo.svg"  id="img">
+                    <img src="/static/img/ungineering_logo.svg"  id="img">
                 </div>
                 <div class="col heading">
                     <div class="row ungineering">
@@ -37,7 +37,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <h1 id="user">Existing User <br>Log-in</h1>
                 </div>
                 <div class="row">
-                    <a href="/social_media/index.php/registration" id="link">New User Create Account</a>
+                    <a href="/registration" id="link">New User Create Account</a>
                 </div>
             </div>
 
@@ -46,7 +46,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <div class="row">
                     <h1 id="form-heading">Log-in</h1>
                 </div>
-                <form action="/social_media/index.php/login/login_submit" method="POST">
+                <form action="/login/login_submit" method="POST">
                     <div class="row row-form">
                         <div class="col col-name">
                             <p id="email"> Email</p>
@@ -70,7 +70,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     </div>
                     <div class="row">
                         <div class="col col-box" id="anchor">
-                            <a href="/social_media/index.php/registration" id="link2">New User Create Account</a>
+                            <a href="/registration" id="link2">New User Create Account</a>
                         </div>
                     </div>
                 </form>

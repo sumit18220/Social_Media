@@ -81,5 +81,15 @@ class User extends CI_Model {
 
         return $row;
     }
+
+    function fetch_user_info(){
+        $id = $_COOKIE['user_id'];
+
+        $query = $this->db->query("SELECT * FROM users where id = $id");
+
+        
+
+        return $query->result_array();
+    }
 }
 

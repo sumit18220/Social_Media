@@ -6,7 +6,7 @@
 <html lang="en">
     <head>
         <title>Registration</title>
-        <link rel="stylesheet" type="text/css" href="/social_media/static/css/registration.css">
+        <link rel="stylesheet" type="text/css" href="/static/css/registration.css">
     </head>
     <body style="margin: 0px;">
         <!--header-->
@@ -14,7 +14,7 @@
             <div class="row1-col1">
                 <div class="row1-col1-col1">
                     <div class="row logo">
-                        <img src="/social_media/static/img/ungineering_logo.svg" style="width: 54px;height: 70px;">
+                        <img src="/static/img/ungineering_logo.svg" style="width: 54px;height: 70px;">
                     </div>
                 </div>
                 <div class="row1-col1-col2">
@@ -42,7 +42,7 @@
                 </div>
                 <div class="row row2-col1-row2">
                     <div class="link">
-                        <a href="/social_media/index.php/login" id="red">Existing User Log-in</a>
+                        <a href="/login" id="red">Existing User Log-in</a>
                     </div>
                 </div>
             </div>
@@ -50,7 +50,7 @@
 
             <!--form-->
             <div class="row2-col2">
-                <form action="/social_media/index.php/registration/register_submit" method="POST">
+                <form action="/registration/register_submit" method="POST">
                     <div class="row2-col2-row1">
                         <div class="form-heading">
                             <h1 id="header">Create Account</h1>
@@ -99,7 +99,7 @@
                     </div>
                     <div class="row row2-col2-row2">
                         <div class="link form">
-                            <a href="/social_media/index.php/login" id="red">Existing User Log-in</a>
+                            <a href="/login" id="red">Existing User Log-in</a>
                         </div>
                     </div>
                 </form>

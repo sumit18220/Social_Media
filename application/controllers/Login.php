@@ -17,7 +17,7 @@
 	        if($arr==NULL)
 	        {
 	            echo "Incorrect credentials";
-	            echo "<a href='/social_media/index.php/login'>Login</a>";
+	            echo "<a href='/login'>Login</a>";
 	            return;
 	        }
 
@@ -27,7 +27,7 @@
 
 	        //$statuses=$this->user->fetch_status();
 	        $this->load->helper('url');
-	        redirect('/homepage');
+	        redirect('homepage');
     	}
     
 

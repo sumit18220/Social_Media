@@ -16,7 +16,7 @@
 	        $this->status->insert_status();
 
 	        echo "Status Submitted Successfully";
-	        echo '<a href="/social_media/index.php/homepage">Home</a>';
+	        echo '<a href="/homepage">Home</a>';
     	}
 
 	}
